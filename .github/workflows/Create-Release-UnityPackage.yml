@@ -49,4 +49,4 @@ jobs:
         uses: ColinPitrat/update-release@v1.0.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          files: ${{ env.unityPackage }}
+          files: RMU/${{env.packageName}}.unitypackage
