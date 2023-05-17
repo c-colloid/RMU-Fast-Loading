@@ -25,7 +25,7 @@ jobs:
           find Assets/RPGMaker/Codebase/Add-ons/FasterLoading/ -name \*.meta >> metaList
           
       - name: Set Environment Variables
-        run: echo "unityPackage = RMU/${{ env.packageName }}.unitypackage" >> $GITHUB_ENV
+        run: echo "unityPackage=RMU/${{ env.packageName }}.unitypackage" >> $GITHUB_ENV
       
       - run: mkdir RMU
       
