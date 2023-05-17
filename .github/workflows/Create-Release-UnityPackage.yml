@@ -6,7 +6,7 @@ on:
     branches: main
     
 env:
-  packageName: "RMU Fast Loading"
+  packageName: "RMU-Fast-Loading"
 
 jobs:
   Create-Release-Unitypackage:
