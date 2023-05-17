@@ -26,18 +26,24 @@ jobs:
           
       - name: Set Environment Variables
         run: echo "unityPackage = ${{ env.packageName }}.unitypackage" >> $GITHUB_ENV
-    
+      
+
+      
       - name: create-unitypackage
         # You may pin to the exact commit or the version.
-        uses: pCYSl5EDgo/create-unitypackage@cfcd3cf0391a5ef1306342794866a9897c32af0b
-        # uses: pCYSl5EDgo/create-unitypackage@v1.1.1
+        # uses: pCYSl5EDgo/create-unitypackage@cfcd3cf0391a5ef1306342794866a9897c32af0b
+        uses: pCYSl5EDgo/create-unitypackage@v1.1.1
         with:
           # Output unitypackage file path
-          package-path: ${{ env.unityPackage }}
+          package-path: ./${{ env.unityPackage }}
           # Relative file paths from project-folder. Multi-line string value. Each line should ends with .meta.
           include-files: metaList
           # Unity project folder. Default => ./
           #project-folder: # optional
+      - uses: actions/upload-artifact@master
+        with:
+          path: ./
+          name: package
 
       - name: Update release
         uses: ColinPitrat/update-release@v1.0.1
