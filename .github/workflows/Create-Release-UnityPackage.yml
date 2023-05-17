@@ -35,7 +35,7 @@ jobs:
         uses: pCYSl5EDgo/create-unitypackage@v1.1.1
         with:
           # Output unitypackage file path
-          package-path: ${{ env.unityPackage }}
+          package-path: 'RMU/${{env.packageName}}.unitypackage'
           # Relative file paths from project-folder. Multi-line string value. Each line should ends with .meta.
           include-files: metaList
           # Unity project folder. Default => ./
